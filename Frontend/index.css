@@ -1,0 +1,181 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans antialiased bg-white text-slate-900 transition-colors duration-300;
+  }
+
+  .dark body {
+    @apply bg-slate-950 text-slate-50;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-slate-100;
+  }
+
+  .dark ::-webkit-scrollbar-track {
+    @apply bg-slate-900;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-300 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-slate-400;
+  }
+
+  .dark ::-webkit-scrollbar-thumb {
+    @apply bg-slate-700;
+  }
+
+  .dark ::-webkit-scrollbar-thumb:hover {
+    @apply bg-slate-600;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-4 py-2 bg-primary hover:bg-primary-dark text-white rounded-lg font-medium transition-colors duration-200;
+  }
+
+  .btn-secondary {
+    @apply px-4 py-2 bg-slate-200 text-slate-900 rounded-lg font-medium hover:bg-slate-300 transition-colors duration-200;
+  }
+
+  .dark .btn-secondary {
+    @apply bg-slate-700 text-white hover:bg-slate-600;
+  }
+
+  .btn-ghost {
+    @apply px-4 py-2 text-slate-700 hover:bg-slate-100 rounded-lg font-medium transition-colors duration-200;
+  }
+
+  .dark .btn-ghost {
+    @apply text-slate-200 hover:bg-slate-800;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-2 border border-slate-300 rounded-lg bg-white text-slate-900 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all;
+  }
+
+  .dark .input-field {
+    @apply border-slate-600 bg-slate-800 text-white;
+  }
+
+  .card {
+    @apply bg-white rounded-lg border border-slate-200 shadow-sm transition-all;
+  }
+
+  .dark .card {
+    @apply bg-slate-900 border-slate-800;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium;
+  }
+
+  .badge-primary {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary-light text-primary-dark;
+  }
+
+  .dark .badge-primary {
+    @apply bg-primary-dark text-white;
+  }
+
+  .badge-success {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-700;
+  }
+
+  .dark .badge-success {
+    @apply bg-green-900 text-green-200;
+  }
+
+  .badge-danger {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-red-100 text-red-700;
+  }
+
+  .dark .badge-danger {
+    @apply bg-red-900 text-red-200;
+  }
+
+  .badge-warning {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-yellow-100 text-yellow-700;
+  }
+
+  .dark .badge-warning {
+    @apply bg-yellow-900 text-yellow-200;
+  }
+
+  .avatar {
+    @apply inline-flex items-center justify-center rounded-full font-semibold text-white text-sm;
+  }
+
+  .avatar-sm {
+    @apply inline-flex items-center justify-center rounded-full font-semibold text-white h-8 w-8 text-xs;
+  }
+
+  .avatar-md {
+    @apply inline-flex items-center justify-center rounded-full font-semibold text-white h-10 w-10 text-sm;
+  }
+
+  .avatar-lg {
+    @apply inline-flex items-center justify-center rounded-full font-semibold text-white h-12 w-12;
+  }
+}
+
+@layer utilities {
+  .smooth-transition {
+    @apply transition-all duration-200 ease-in-out;
+  }
+
+  .text-truncate {
+    @apply overflow-hidden text-ellipsis whitespace-nowrap;
+  }
+
+  .gradient-primary {
+    background: linear-gradient(to right, #B8E3E9, #4F7C82);
+  }
+
+  .shadow-sm-dark {
+    @apply shadow-sm;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(10px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(-10px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
+
+.animate-fadeIn { animation: fadeIn 0.3s ease-in-out; }
+.animate-slideUp { animation: slideUp 0.3s ease-out; }
+.animate-slideInRight { animation: slideInRight 0.3s ease-out; }
+.animate-float { animation: float 3s ease-in-out infinite; }
+.animate-shimmer { animation: shimmer 2s infinite; background-size: 1000px 100%; }
